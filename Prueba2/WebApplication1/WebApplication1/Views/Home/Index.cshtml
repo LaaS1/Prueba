@@ -1,0 +1,126 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<style>
+
+    .h1 {
+        text-align: center;
+        font-weight: normal;
+        font-size: 70px;
+    }
+</style>
+
+
+<header>
+
+    <h1>Lista de Trabajadores</h1>
+
+
+</header>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <button id="btnNuevo" type="button" class="btn btn-primary" data-bs-toggle="modal"> NUEVO </button>
+        </div>
+    </div>
+</div>
+
+<!-- TABLA LISTADO -->
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="table-responsive">
+                <table id="tablaTrabajadores" class="table table-striped table-bordered table-condensed" style="width:100%">
+                    <thead class="text-center">
+                        <tr>
+                            <th>Tipo Documento</th>
+                            <th>Nro Documento</th>
+                            <th>Nombres</th>
+                            <th>Sexo</th>
+                            <th>Departamento</th>
+                            <th>Provincia</th>
+                            <th>Distrito</th>
+                            <th>Acción</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<!-- MODAL -->
+
+<div class="modal fade" id="Modal_Mantenimiento" tabindex="-1" role="dialog" aria-labelledby="modalRegistroLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h6 class="modal-title" id="TituloModal"></h6>
+                <button type="button" class="close cerrar">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <input id="txtId" type="hidden" />
+                <form id="formTrabajadores">
+                    <div class="form-group">
+                        <label for="TipoDocumento" class="col-form-label">Tipo Documento:</label>
+                        <input autocomplete="off" type="text" class="form-control" id="TipoDocumento">
+                    </div>
+                    <div class="form-group">
+                        <label for="NumeroDocumento" class="col-form-label">Numero Documento:</label>
+                        <input autocomplete="off" type="text" class="form-control" id="NumeroDocumento">
+                    </div>
+                    <div class="form-group">
+                        <label for="Nombres" class="col-form-label">Nombres:</label>
+                        <input autocomplete="off" type="text" class="form-control" id="Nombres">
+                    </div>
+                    <div class="form-group">
+                        <label for="Sexo" class="col-form-label">Sexo:</label>
+                        <input autocomplete="off" type="text" class="form-control" id="Sexo">
+                    </div>
+                    <div class="form-group">
+                        <label for="IdDepartamento" class="col-form-label">DEPARTAMENTO:</label>
+                        <select type="text" class="form-control" id="cboDepartamento">
+                            <option value="-1">--SELECIONE--</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="IdProvincia" class="col-form-label">PROVINCIA:</label>
+                        <select class="form-control" id="cboProvincia">
+                            <option value="-1">--SELECIONE--</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="IdDistrito" class="col-form-label">DISTRITO:</label>
+                        <select class="form-control" id="cboDistrito">
+                            <option value="-1">--SELECIONE--</option>
+                        </select>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger cerrar">Cancelar</button>
+                <button type="button" id="btnActualizar" class="btn btn-primary">Actualizar</button>
+                <button type="button" id="btnGuardar" class="btn btn-primary">Guardar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+<script src="~/js/Trabajador/Index.js" asp-append-version="true"></script>
+
